@@ -2,8 +2,13 @@ D'Method is package to get value from several compute, to faster build app.
 
 ## Usage
 
-1. Launch
+Convert Byte
 ```dart
+double size = DMethod.byteToMb(10123456);
+DMethod.printTitle(
+    'byteToMb',
+    '${size.toStringAsFixed(2)} Mb',
+);
 ```
 
 # Tutorial :
