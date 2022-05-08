@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +15,26 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(title: const Text('DView')),
-        body: SingleChildScrollView(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start, children: []),
+        body: ListView(
+          padding: EdgeInsets.all(16),
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(''),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(''),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(''),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(''),
+            ),
+          ],
         ),
       ),
     );
