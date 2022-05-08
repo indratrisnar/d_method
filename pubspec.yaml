@@ -1,5 +1,5 @@
 name: d_method
-description: Package for some shortcut action
+description: Package for some shortcut method
 version: 0.0.1
 homepage: https://github.com/indratrisnar/d_method
 
@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  url_launcher: ^6.0.20
-  maps_launcher: ^2.0.1
 
 dev_dependencies:
   flutter_test:

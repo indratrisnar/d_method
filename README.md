@@ -1,4 +1,4 @@
-D'Method is package to get shorcut action, like launchURl, count math, convert data, etc.
+D'Method is package to get value from several compute, to faster build app.
 
 ## Usage
 
