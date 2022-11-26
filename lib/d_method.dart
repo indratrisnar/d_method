@@ -6,12 +6,32 @@ class DMethod {
   /// print in console
   static void printBasic(String body) => print(body);
 
-  /// print in console with line style
-  static void printTitle(String title, String body) {
-    printBasic('_' * 80);
-    printBasic('===> ' + title);
-    printBasic('===> ' + body);
-    printBasic('=' * 80);
+  /// limit for styling color text console
+  static const String _limitColor = '\u001b[0m';
+
+  /// print in console with line and color style\
+  /// code must be 0-255\
+  /// Default:\
+  /// lineCount = 60\
+  /// titleCode = 172\
+  /// bodyCode = 178
+  static void printTitle(
+    String title,
+    String body, {
+    int? lineCount,
+    int? titleCode,
+    int? bodyCode,
+  }) {
+    String underLine =
+        "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
+    String upperLine =
+        "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
+    printBasic(underLine);
+    printBasic(
+        "$_limitColor\u001b[38;5;${titleCode ?? 172}m$title" + _limitColor);
+    printBasic(
+        "$_limitColor\u001b[38;5;${bodyCode ?? 178}m$body" + _limitColor);
+    printBasic(upperLine);
   }
 
   /// convert Byte value to MegaByte value
@@ -28,5 +48,17 @@ class DMethod {
         cos((lat2 - lat1) * p) / 2 +
         cos(lat1 * p) * cos(lat2 * p) * (1 - cos((lon2 - lon1) * p)) / 2;
     return 12742 * asin(sqrt(a));
+  }
+
+  /// set digit number
+  /// if decimal equal to "0" then auto return int number as String
+  static String numberAutoDigit(double value, [int maxDigit = 3]) {
+    if (value.toInt() == value) {
+      return value.toInt().toString();
+    } else {
+      int digit = value.toString().split('.').last.length;
+      if (digit > maxDigit) return value.toStringAsFixed(maxDigit);
+      return value.toString();
+    }
   }
 }

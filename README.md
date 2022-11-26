@@ -2,7 +2,7 @@ D'Method is package to get value from several compute, to faster build app.
 
 ## Usage
 
-Convert Byte
+### Convert Byte
 ```dart
 double size = DMethod.byteToMb(10123456);
 DMethod.printTitle(
@@ -11,8 +11,23 @@ DMethod.printTitle(
 );
 ```
 
-# Tutorial :
-Soon
+## Log Console
+
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_printtitle.png" alt="dmethod_printtitle" width="540">
+
+```dart
+printTitle('http://drexappstudio/youtube','oooooo');
+printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105);
+printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105,bodyCode: 106);
+```
+
+Color Code
+
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_printtitle_color_code.png" alt="dmethod_printtitle_color_code" height="540">
+
+
+### Tutorial :
+-
 
 Support me for more feature & packages
 [Donate](https://www.paypal.com/paypalme/indratrisnar)
