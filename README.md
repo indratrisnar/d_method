@@ -11,19 +11,19 @@ DMethod.printTitle(
 );
 ```
 
-## Log Console
+### Log Console
 
 <img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_printtitle.png" alt="dmethod_printtitle" width="540">
 
 ```dart
-printTitle('http://drexappstudio/youtube','oooooo');
-printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105);
-printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105,bodyCode: 106);
+DMethod.printTitle('http://drexappstudio/youtube','oooooo');
+DMethod.printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105);
+DMethod.printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105,bodyCode: 106);
 ```
 
 Color Code
 
-<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_printtitle_color_code.png" alt="dmethod_printtitle_color_code" height="540">
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_printtitle_color_code.png" alt="dmethod_printtitle_color_code" height="400">
 
 
 ### Tutorial :
