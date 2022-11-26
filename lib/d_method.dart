@@ -28,9 +28,9 @@ class DMethod {
         "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
     printBasic(underLine);
     printBasic(
-        "$_limitColor\u001b[38;5;${titleCode ?? 172}m$title" + _limitColor);
+        "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title" + _limitColor);
     printBasic(
-        "$_limitColor\u001b[38;5;${bodyCode ?? 178}m$body" + _limitColor);
+        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$body" + _limitColor);
     printBasic(upperLine);
   }
 

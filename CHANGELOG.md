@@ -1,3 +1,7 @@
+## 0.0.5
+
+- change default code color printTitle
+
 ## 0.0.4
 
 - styling printTitle
