@@ -1,12 +1,12 @@
 ## 0.0.7
 
-- printTitle
-bug start char body [fixed]
-clear log [flutter]
+- printTitle\
+bug start char body [fixed]\
+clear log [flutter]\
 
-- printBasic
-color
-clear log [flutter]
+- printBasic\
+color\
+clear log [flutter]\
 
 ## 0.0.6
 
