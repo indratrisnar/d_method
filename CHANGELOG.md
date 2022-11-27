@@ -1,3 +1,13 @@
+## 0.0.7
+
+- printTitle
+bug start char body [fixed]
+clear log [flutter]
+
+- printBasic
+color
+clear log [flutter]
+
 ## 0.0.6
 
 - change default maxBodyChar to set maximum character show on body printTitle

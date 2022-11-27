@@ -1,13 +1,17 @@
 library d_method;
 
+import 'dart:io';
 import 'dart:math';
 
 class DMethod {
-  /// print in console
-  static void printBasic(String body) => print(body);
-
   /// limit for styling color text console
   static const String _limitColor = '\u001b[0m';
+
+  /// print in console with custom color
+  /// colorCode must be 0-255\
+  static void printBasic(String body, [int colorCode = 178]) {
+    stdout.writeln("$_limitColor\u001b[38;5;${colorCode}m$body$_limitColor");
+  }
 
   /// print in console with line and color style\
   /// code must be 0-255\
@@ -26,17 +30,16 @@ class DMethod {
   }) {
     int newMaxBodyChar = maxBodyChar ?? 200;
     String newBody =
-        body.length > newMaxBodyChar ? body.substring(1, newMaxBodyChar) : body;
+        body.length > newMaxBodyChar ? body.substring(0, newMaxBodyChar) : body;
     String underLine =
         "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
     String upperLine =
         "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
-    printBasic(underLine);
-    printBasic(
-        "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title" + _limitColor);
-    printBasic(
-        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody" + _limitColor);
-    printBasic(upperLine);
+    stdout.writeln(underLine);
+    stdout.writeln(
+        "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
+    stdout.writeln("$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody");
+    stdout.writeln(upperLine);
   }
 
   /// convert Byte value to MegaByte value
