@@ -38,7 +38,8 @@ class DMethod {
     stdout.writeln(underLine);
     stdout.writeln(
         "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
-    stdout.writeln("$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody");
+    stdout.writeln(
+        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
     stdout.writeln(upperLine);
   }
 
