@@ -15,13 +15,18 @@ class DMethod {
   /// lineCount = 60\
   /// titleCode = 172\
   /// bodyCode = 178
+  /// maxBodyChar = 200
   static void printTitle(
     String title,
     String body, {
     int? lineCount,
     int? titleCode,
     int? bodyCode,
+    int? maxBodyChar,
   }) {
+    int newMaxBodyChar = maxBodyChar ?? 200;
+    String newBody =
+        body.length > newMaxBodyChar ? body.substring(1, newMaxBodyChar) : body;
     String underLine =
         "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
     String upperLine =
@@ -30,7 +35,7 @@ class DMethod {
     printBasic(
         "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title" + _limitColor);
     printBasic(
-        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$body" + _limitColor);
+        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody" + _limitColor);
     printBasic(upperLine);
   }
 

@@ -1,3 +1,7 @@
+## 0.0.6
+
+- change default maxBodyChar to set maximum character show on body printTitle
+
 ## 0.0.5
 
 - change default code color printTitle
