@@ -35,12 +35,10 @@ class DMethod {
         "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
     String upperLine =
         "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
-    stdout.writeln(underLine);
-    stdout.writeln(
-        "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
-    stdout.writeln(
-        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
-    stdout.writeln(upperLine);
+    print(underLine);
+    print("$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
+    print("$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
+    print(upperLine);
   }
 
   /// convert Byte value to MegaByte value

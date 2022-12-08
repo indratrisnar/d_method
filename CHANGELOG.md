@@ -1,3 +1,6 @@
+## 0.0.9
+- change print method to basic console flutter
+
 ## 0.0.8
 - printTitle\
 limitColor ketinggalan
