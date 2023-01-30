@@ -1,3 +1,7 @@
+## 0.2.0
+
+- add new function to print response http
+
 ## 0.1.0
 
 - change print method to basic

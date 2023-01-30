@@ -2,6 +2,8 @@ library d_method;
 
 import 'dart:math';
 
+import 'package:http/http.dart' as _http;
+
 class DMethod {
   /// limit for styling color text console
   static const String _limitColor = '\u001b[0m';
@@ -13,7 +15,7 @@ class DMethod {
   }
 
   /// print in console with line and color style\
-  /// code must be 0-255\
+  /// code must be 0-255 (for color)\
   /// Default:\
   /// lineCount = 60\
   /// titleCode = 172\
@@ -29,6 +31,44 @@ class DMethod {
     int? maxBodyChar,
     bool showAllDataBody = false,
   }) {
+    int newMaxBodyChar = maxBodyChar ?? 300;
+    String newBody = showAllDataBody
+        ? body
+        : body.length > newMaxBodyChar
+            ? body.substring(0, newMaxBodyChar)
+            : body;
+    String underLine =
+        "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
+    String upperLine =
+        "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
+    print(underLine);
+    print("$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
+    print("$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
+    print(upperLine);
+  }
+
+  /// print in console with style for Response http access\
+  /// code must be 0-255 (for color)\
+  /// Default:\
+  /// lineCount = 60\
+  /// titleCode = 172\
+  /// bodyCode = 178\
+  /// maxBodyChar = 300\
+  /// showAllDataBody: false
+  static void printResponse(
+    _http.Response response, {
+    String? prefix,
+    int? lineCount,
+    int? titleCode,
+    int? bodyCode,
+    int? maxBodyChar,
+    bool showAllDataBody = false,
+  }) {
+    String method = response.request!.method;
+    String url = response.request!.url.toString();
+    int statusCode = response.statusCode;
+    String title = "${prefix ?? 'Response: '}$method | $url | $statusCode";
+    String body = response.body;
     int newMaxBodyChar = maxBodyChar ?? 300;
     String newBody = showAllDataBody
         ? body

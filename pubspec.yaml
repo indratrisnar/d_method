@@ -1,6 +1,6 @@
 name: d_method
 description: Package for some shortcut method, utility function and etc
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/indratrisnar/d_method
 
 environment:
@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
