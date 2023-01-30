@@ -1,6 +1,5 @@
 library d_method;
 
-import 'dart:io';
 import 'dart:math';
 
 class DMethod {
@@ -10,7 +9,7 @@ class DMethod {
   /// print in console with custom color
   /// colorCode must be 0-255\
   static void printBasic(String body, [int colorCode = 178]) {
-    stdout.writeln("$_limitColor\u001b[38;5;${colorCode}m$body$_limitColor");
+    print("$_limitColor\u001b[38;5;${colorCode}m$body$_limitColor");
   }
 
   /// print in console with line and color style\
@@ -18,8 +17,9 @@ class DMethod {
   /// Default:\
   /// lineCount = 60\
   /// titleCode = 172\
-  /// bodyCode = 178
-  /// maxBodyChar = 200
+  /// bodyCode = 178\
+  /// maxBodyChar = 300\
+  /// showAllDataBody: false
   static void printTitle(
     String title,
     String body, {
@@ -27,10 +27,14 @@ class DMethod {
     int? titleCode,
     int? bodyCode,
     int? maxBodyChar,
+    bool showAllDataBody = false,
   }) {
-    int newMaxBodyChar = maxBodyChar ?? 200;
-    String newBody =
-        body.length > newMaxBodyChar ? body.substring(0, newMaxBodyChar) : body;
+    int newMaxBodyChar = maxBodyChar ?? 300;
+    String newBody = showAllDataBody
+        ? body
+        : body.length > newMaxBodyChar
+            ? body.substring(0, newMaxBodyChar)
+            : body;
     String underLine =
         "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
     String upperLine =

@@ -1,19 +1,27 @@
+## 0.1.0
+
+- change print method to basic
+- add prop showAllDataBody in printTitle()
+- change default maxBodyChar to 300
+
 ## 0.0.9
+
 - change print method to basic console flutter
 
 ## 0.0.8
+
 - printTitle\
-limitColor ketinggalan
+  limitColor ketinggalan
 
 ## 0.0.7
 
 - printTitle\
-bug start char body [fixed]\
-clear log [flutter]\
+  bug start char body [fixed]\
+  clear log [flutter]\
 
 - printBasic\
-color\
-clear log [flutter]\
+  color\
+  clear log [flutter]\
 
 ## 0.0.6
 
@@ -39,6 +47,7 @@ clear log [flutter]\
 ## 0.0.1
 
 First Feature
+
 - print (basic & title)
 - convert byte (toMB)
 - range coordinate
