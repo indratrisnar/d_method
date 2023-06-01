@@ -1,3 +1,8 @@
+## 0.2.1
+
+- upgrade version package http to v1.0.0
+- add example for check response http
+
 ## 0.2.0
 
 - add new function to print response http
