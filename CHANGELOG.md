@@ -2,6 +2,7 @@
 
 - upgrade version package http to v1.0.0
 - add example for check response http
+- change print() to debugPrint()
 
 ## 0.2.0
 
