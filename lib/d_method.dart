@@ -3,7 +3,7 @@ library d_method;
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
-import 'package:http/http.dart' as _http;
+import 'package:http/http.dart' as http;
 
 class DMethod {
   /// limit for styling color text console
@@ -59,7 +59,7 @@ class DMethod {
   /// maxBodyChar = 300\
   /// showAllDataBody: false
   static void printResponse(
-    _http.Response response, {
+    http.Response response, {
     String? prefix,
     int? lineCount,
     int? titleCode,
