@@ -20,7 +20,7 @@ final response = await http.get(Uri.parse(url));
 DMethod.printResponse(response);
 ```
 
-<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_response.png" alt="dmethod_printtitle" width="600">
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_response.png" alt="dmethod_printtitle" width="650">
 
 ### Log Console
 
