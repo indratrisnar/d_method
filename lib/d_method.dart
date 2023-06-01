@@ -2,6 +2,7 @@ library d_method;
 
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as _http;
 
 class DMethod {
@@ -11,7 +12,7 @@ class DMethod {
   /// print in console with custom color
   /// colorCode must be 0-255\
   static void printBasic(String body, [int colorCode = 178]) {
-    print("$_limitColor\u001b[38;5;${colorCode}m$body$_limitColor");
+    debugPrint("$_limitColor\u001b[38;5;${colorCode}m$body$_limitColor");
   }
 
   /// print in console with line and color style\
@@ -41,10 +42,12 @@ class DMethod {
         "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
     String upperLine =
         "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
-    print(underLine);
-    print("$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
-    print("$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
-    print(upperLine);
+    debugPrint(underLine);
+    debugPrint(
+        "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
+    debugPrint(
+        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
+    debugPrint(upperLine);
   }
 
   /// print in console with style for Response http access\
@@ -79,10 +82,12 @@ class DMethod {
         "$_limitColor\u001b[38;5;244m${'_' * (lineCount ?? 60)}$_limitColor";
     String upperLine =
         "$_limitColor\u001b[38;5;244m${'‾' * (lineCount ?? 60)}$_limitColor";
-    print(underLine);
-    print("$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
-    print("$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
-    print(upperLine);
+    debugPrint(underLine);
+    debugPrint(
+        "$_limitColor\u001b[38;5;${titleCode ?? 178}m$title$_limitColor");
+    debugPrint(
+        "$_limitColor\u001b[38;5;${bodyCode ?? 142}m$newBody$_limitColor");
+    debugPrint(upperLine);
   }
 
   /// convert Byte value to MegaByte value
