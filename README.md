@@ -20,14 +20,14 @@ final response = await http.get(Uri.parse(url));
 DMethod.printResponse(response);
 ```
 
-<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_response.png" alt="dmethod_printtitle" width="650">
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_response.png" alt="dmethod_printtitle" width="700">
 
 ### Log Console
 
 ```dart
-DMethod.printTitle('http://drexappstudio/youtube','oooooo');
-DMethod.printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105);
-DMethod.printTitle('http://drexappstudio/youtube','oooooo',titleCode: 105,bodyCode: 106);
+DMethod.printTitle('http://flutterdlux/youtube','oooooo');
+DMethod.printTitle('http://flutterdlux/youtube','oooooo',titleCode: 105);
+DMethod.printTitle('http://flutterdlux/youtube','oooooo',titleCode: 105,bodyCode: 106);
 ```
 
 <img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_title.png" alt="dmethod_printtitle" width="540">
