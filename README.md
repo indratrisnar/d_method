@@ -33,8 +33,8 @@ DMethod.printTitle('http://flutterdlux/youtube','oooooo',titleCode: 105,bodyCode
 <img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_title.png" alt="dmethod_printtitle" width="540">
 
 Color Code\
-<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_title_color_code.png" alt="dmethod_printtitle_color_code" width="600">
-<img src="https://github.com/indratrisnar/d_method/raw/master/pic/256_color_palette.png" alt="dmethod_printtitle_color_code" width="600">
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_title_color_code.png" alt="dmethod_printtitle_color_code" width="800">
+<img src="https://github.com/indratrisnar/d_method/raw/master/pic/256_color_palette.png" alt="dmethod_printtitle_color_code" width="500">
 
 ### Tutorial :
 
