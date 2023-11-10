@@ -1,3 +1,7 @@
+## 0.2.2
+
+- add new method log() and logResponse()
+
 ## 0.2.1
 
 - upgrade version package http to v1.0.0

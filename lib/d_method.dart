@@ -1,13 +1,56 @@
 library d_method;
 
 import 'dart:math';
-
+import 'dart:developer' as developer;
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
+/// Utility method
 class DMethod {
   /// limit for styling color text console
   static const String _limitColor = '\u001b[0m';
+  static const String _resetColor = '\x1B[0m';
+
+  static String _ansiForegroundColor(int? code) {
+    if (code == null) return '';
+    return '\x1B[38;5;${code}m';
+  }
+
+  /// log for debug mode\
+  /// with color customize
+  static void log(String message, {int? colorCode}) {
+    developer.log(
+      '${_ansiForegroundColor(colorCode)}$message$_resetColor',
+      name: 'DMethod',
+    );
+  }
+
+  /// log for debug response `http` package\
+  /// with color customize\
+  /// `maxBodyChar` : max character to show, default: full
+  static void logResponse(
+    http.Response response, {
+    int? titleCode,
+    int? bodyCode,
+    int? maxBodyChar,
+  }) {
+    String method = response.request!.method;
+    String url = response.request!.url.toString();
+    int statusCode = response.statusCode;
+    String title = "$method | $url | $statusCode";
+    String body = response.body;
+    String newBody =
+        maxBodyChar == null ? body : body.substring(0, maxBodyChar);
+    developer.log(
+      '${_ansiForegroundColor(titleCode)}$title$_resetColor',
+      name: 'DMethod',
+    );
+    developer.log(
+      '${_ansiForegroundColor(bodyCode)}$newBody$_resetColor',
+      name: 'DMethod',
+      level: 1,
+    );
+  }
 
   /// print in console with custom color
   /// colorCode must be 0-255\
