@@ -18,6 +18,7 @@ DMethod.printTitle(
 String url = 'https://jsonplaceholder.typicode.com/posts';
 final response = await http.get(Uri.parse(url));
 DMethod.printResponse(response);
+DMethod.logResponse(response);
 ```
 
 <img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_response.png" alt="dmethod_printtitle" width="700">
@@ -28,6 +29,8 @@ DMethod.printResponse(response);
 DMethod.printTitle('http://flutterdlux/youtube','oooooo');
 DMethod.printTitle('http://flutterdlux/youtube','oooooo',titleCode: 105);
 DMethod.printTitle('http://flutterdlux/youtube','oooooo',titleCode: 105,bodyCode: 106);
+DMethod.log('from 10123456 byte');
+DMethod.logTitle('http://flutterdlux/youtube','oooooo',titleCode: 105,bodyCode: 106);
 ```
 
 <img src="https://github.com/indratrisnar/d_method/raw/master/pic/dmethod_print_title.png" alt="dmethod_printtitle" width="540">

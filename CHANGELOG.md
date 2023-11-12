@@ -1,3 +1,7 @@
+## 0.2.3
+
+- add new log title, and add divider line
+
 ## 0.2.2
 
 - add new method log() and logResponse()

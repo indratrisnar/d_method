@@ -3,6 +3,7 @@ library d_method;
 import 'dart:math';
 import 'dart:developer' as developer;
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 /// Utility method
@@ -16,6 +17,10 @@ class DMethod {
     return '\x1B[38;5;${code}m';
   }
 
+  static String _getLine(String char) {
+    return '${_ansiForegroundColor(244)}${char * 60}$_resetColor';
+  }
+
   /// log for debug mode\
   /// with color customize
   static void log(String message, {int? colorCode}) {
@@ -25,9 +30,35 @@ class DMethod {
     );
   }
 
+  /// log for 2 line string
+  /// with color customize\
+  /// `maxBodyChar` : max character to show, default: full\
+  /// `titleCode` color of title
+  /// `bodyCode` color of body
+  static void logTitle(
+    String title,
+    String body, {
+    int? titleCode,
+    int? bodyCode,
+    int? maxBodyChar,
+  }) {
+    developer.log(_getLine('‾'), name: 'DMethod');
+    developer.log(
+      '${_ansiForegroundColor(titleCode)}$title$_resetColor',
+      name: 'DMethod',
+    );
+    developer.log(
+      '${_ansiForegroundColor(bodyCode)}$body$_resetColor',
+      name: 'DMethod',
+    );
+    developer.log(_getLine('_'), name: 'DMethod');
+  }
+
   /// log for debug response `http` package\
   /// with color customize\
-  /// `maxBodyChar` : max character to show, default: full
+  /// `maxBodyChar` : max character to show, default: full\
+  /// `titleCode` color of title
+  /// `bodyCode` color of body
   static void logResponse(
     http.Response response, {
     int? titleCode,
@@ -41,6 +72,7 @@ class DMethod {
     String body = response.body;
     String newBody =
         maxBodyChar == null ? body : body.substring(0, maxBodyChar);
+    developer.log(_getLine('‾'), name: 'DMethod');
     developer.log(
       '${_ansiForegroundColor(titleCode)}$title$_resetColor',
       name: 'DMethod',
@@ -48,13 +80,13 @@ class DMethod {
     developer.log(
       '${_ansiForegroundColor(bodyCode)}$newBody$_resetColor',
       name: 'DMethod',
-      level: 1,
     );
+    developer.log(_getLine('_'), name: 'DMethod');
   }
 
   /// print in console with custom color
   /// colorCode must be 0-255\
-  static void printBasic(String body, [int colorCode = 178]) {
+  static void printBasic(String body, [int colorCode = 172]) {
     debugPrint("$_limitColor\u001b[38;5;${colorCode}m$body$_limitColor");
   }
 
@@ -160,4 +192,10 @@ class DMethod {
       return value.toString();
     }
   }
+
+  /// DT: DateTime\
+  /// to check is between datetime
+  // static bool isBetweenDT(DateTime data, DateTime start, DateTime end) {
+  //   return data.isBefore(start) && data.isAfter(end);
+  // }
 }
