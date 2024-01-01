@@ -23,10 +23,14 @@ class DMethod {
 
   /// log for debug mode\
   /// with color customize
-  static void log(String message, {int? colorCode}) {
+  static void log(
+    String message, {
+    int? colorCode,
+    String? prefix,
+  }) {
     developer.log(
       '${_ansiForegroundColor(colorCode)}$message$_resetColor',
-      name: 'DMethod',
+      name: prefix ?? 'DMethod',
     );
   }
 
@@ -41,17 +45,24 @@ class DMethod {
     int? titleCode,
     int? bodyCode,
     int? maxBodyChar,
+    String? prefix,
   }) {
-    developer.log(_getLine('‾'), name: 'DMethod');
+    developer.log(
+      _getLine('‾'),
+      name: prefix ?? 'DMethod',
+    );
     developer.log(
       '${_ansiForegroundColor(titleCode)}$title$_resetColor',
-      name: 'DMethod',
+      name: prefix ?? 'DMethod',
     );
     developer.log(
       '${_ansiForegroundColor(bodyCode)}$body$_resetColor',
-      name: 'DMethod',
+      name: prefix ?? 'DMethod',
     );
-    developer.log(_getLine('_'), name: 'DMethod');
+    developer.log(
+      _getLine('_'),
+      name: prefix ?? 'DMethod',
+    );
   }
 
   /// log for debug response `http` package\
@@ -64,6 +75,7 @@ class DMethod {
     int? titleCode,
     int? bodyCode,
     int? maxBodyChar,
+    String? prefix,
   }) {
     String method = response.request!.method;
     String url = response.request!.url.toString();
@@ -72,16 +84,22 @@ class DMethod {
     String body = response.body;
     String newBody =
         maxBodyChar == null ? body : body.substring(0, maxBodyChar);
-    developer.log(_getLine('‾'), name: 'DMethod');
+    developer.log(
+      _getLine('‾'),
+      name: prefix ?? 'DMethod',
+    );
     developer.log(
       '${_ansiForegroundColor(titleCode)}$title$_resetColor',
-      name: 'DMethod',
+      name: prefix ?? 'DMethod',
     );
     developer.log(
       '${_ansiForegroundColor(bodyCode)}$newBody$_resetColor',
-      name: 'DMethod',
+      name: prefix ?? 'DMethod',
     );
-    developer.log(_getLine('_'), name: 'DMethod');
+    developer.log(
+      _getLine('_'),
+      name: prefix ?? 'DMethod',
+    );
   }
 
   /// print in console with custom color

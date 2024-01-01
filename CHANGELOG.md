@@ -1,3 +1,7 @@
+## 0.2.4
+
+- add prefix log
+
 ## 0.2.3
 
 - add new log title, and add divider line
