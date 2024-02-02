@@ -1,3 +1,7 @@
+## 0.2.5
+
+- maxBodyChar, default 200.
+
 ## 0.2.4
 
 - add prefix log

@@ -1,7 +1,8 @@
 library d_method;
 
-import 'dart:math';
 import 'dart:developer' as developer;
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -36,7 +37,7 @@ class DMethod {
 
   /// log for 2 line string
   /// with color customize\
-  /// `maxBodyChar` : max character to show, default: full\
+  /// `maxBodyChar` : max character to show, default: 200\ set null to show all
   /// `titleCode` color of title
   /// `bodyCode` color of body
   static void logTitle(
@@ -44,7 +45,7 @@ class DMethod {
     String body, {
     int? titleCode,
     int? bodyCode,
-    int? maxBodyChar,
+    int? maxBodyChar = 200,
     String? prefix,
   }) {
     developer.log(
@@ -67,14 +68,14 @@ class DMethod {
 
   /// log for debug response `http` package\
   /// with color customize\
-  /// `maxBodyChar` : max character to show, default: full\
+  /// `maxBodyChar` : max character to show, default: 200\ set null to show all
   /// `titleCode` color of title
   /// `bodyCode` color of body
   static void logResponse(
     http.Response response, {
     int? titleCode,
     int? bodyCode,
-    int? maxBodyChar,
+    int? maxBodyChar = 200,
     String? prefix,
   }) {
     String method = response.request!.method;
@@ -114,7 +115,7 @@ class DMethod {
   /// lineCount = 60\
   /// titleCode = 172\
   /// bodyCode = 178\
-  /// maxBodyChar = 300\
+  /// maxBodyChar = 200\
   /// showAllDataBody: false
   static void printTitle(
     String title,
@@ -125,7 +126,7 @@ class DMethod {
     int? maxBodyChar,
     bool showAllDataBody = false,
   }) {
-    int newMaxBodyChar = maxBodyChar ?? 300;
+    int newMaxBodyChar = maxBodyChar ?? 200;
     String newBody = showAllDataBody
         ? body
         : body.length > newMaxBodyChar
@@ -149,7 +150,7 @@ class DMethod {
   /// lineCount = 60\
   /// titleCode = 172\
   /// bodyCode = 178\
-  /// maxBodyChar = 300\
+  /// maxBodyChar = 200\
   /// showAllDataBody: false
   static void printResponse(
     http.Response response, {
@@ -165,7 +166,7 @@ class DMethod {
     int statusCode = response.statusCode;
     String title = "${prefix ?? 'Response: '}$method | $url | $statusCode";
     String body = response.body;
-    int newMaxBodyChar = maxBodyChar ?? 300;
+    int newMaxBodyChar = maxBodyChar ?? 200;
     String newBody = showAllDataBody
         ? body
         : body.length > newMaxBodyChar
