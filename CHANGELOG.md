@@ -1,3 +1,7 @@
+## 0.2.6
+
+- fix bug `maxBodyChar`: RangeError (end): Invalid value: Not in inclusive range 0..64: 200
+
 ## 0.2.5
 
 - maxBodyChar, default 200.

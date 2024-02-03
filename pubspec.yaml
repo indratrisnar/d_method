@@ -1,6 +1,6 @@
 name: d_method
 description: Package for some shortcut method, utility function and etc
-version: 0.2.5
+version: 0.2.6
 homepage: https://github.com/indratrisnar/d_method
 
 environment:

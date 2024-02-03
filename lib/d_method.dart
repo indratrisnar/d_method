@@ -83,8 +83,9 @@ class DMethod {
     int statusCode = response.statusCode;
     String title = "$method | $url | $statusCode";
     String body = response.body;
-    String newBody =
-        maxBodyChar == null ? body : body.substring(0, maxBodyChar);
+    String newBody = maxBodyChar == null || body.length < maxBodyChar
+        ? body
+        : body.substring(0, maxBodyChar);
     developer.log(
       _getLine('‾'),
       name: prefix ?? 'DMethod',
